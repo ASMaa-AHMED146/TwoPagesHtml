@@ -13,10 +13,12 @@
     <script>
         let body=document.querySelector("body");
         body.style.background="blueviolet";
-        let str=location.search;
+        let str=location.search.replace(/\+/ig,' ');
+        console.log(str)
         let start=str.indexOf('=');
         let end=str.indexOf('&');
         let name=str.substring(start+1,end);
+        console.log(name)
         let age=str.match(/\d/ig).join("");
         document.querySelector(".text").innerHTML=`hello ${name} your age is ${age}<br> <p>click c or alt to change page color<p>`;
     function changecOLOR(event)
