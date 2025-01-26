@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body onkeydown="changecOLOR(event)">
+    <div class="text">
+
+    </div>
+    <script>
+        let body=document.querySelector("body");
+        body.style.background="blueviolet";
+        let str=location.search;
+        let start=str.indexOf('=');
+        let end=str.indexOf('&');
+        let name=str.substring(start+1,end);
+        let age=str.match(/\d/ig).join("");
+        document.querySelector(".text").innerHTML=`hello ${name} your age is ${age}<br> <p>click c or alt to change page color<p>`;
+    function changecOLOR(event)
+    {
+      if( event.key=='Alt' || event.key=='c' )
+      {
+
+        console.log("change colors")
+        body.style.background="black";
+        body.style.color="blueviolet";
+      }
+    }
+    </script>
+</body>
+</html>
